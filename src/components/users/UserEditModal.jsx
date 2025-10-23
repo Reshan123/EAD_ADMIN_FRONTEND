@@ -5,9 +5,7 @@ import { UserContext } from '../../context/UserContext'; // Adjust path as neede
 // Define user roles for the dropdown
 const ROLE_OPTIONS = [
   { value: 'BackOffice', label: 'Back Office' },
-  { value: 'Admin', label: 'Admin' },
   { value: 'StationOperator', label: 'Station Operator' },
-  { value: 'EVOwner', label: 'EV Owner' },
 ];
 
 const UserEditModal = ({ isOpen, onClose, user }) => {

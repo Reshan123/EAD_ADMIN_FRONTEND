@@ -95,10 +95,9 @@ const DeactivatedUserList = ({ filteredUsers, allUsers, loading }) => {
                 ))
               ) : displayedUsers.length > 0 ? (
                 displayedUsers.map((user) => {
-                  const id = user._id || user.id;
-                  const isReactivating = reactivatingId === id;
+                  const isReactivating = reactivatingId === user.nic;
                   return (
-                    <tr key={id} className="hover:bg-gray-50 transition-colors">
+                    <tr key={user.nic} className="hover:bg-gray-50 transition-colors">
                       <td className="px-4 py-3 whitespace-nowrap">
                         <span
                           className="text-sm font-medium text-gray-900 truncate"
@@ -125,7 +124,7 @@ const DeactivatedUserList = ({ filteredUsers, allUsers, loading }) => {
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap text-center">
                         <button
-                          onClick={() => handleReactivate(id)}
+                          onClick={() => handleReactivate(user.nic)}
                           disabled={isReactivating}
                           className="inline-flex items-center justify-center gap-2 px-3 py-1.5 text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md hover:bg-emerald-100 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
                           title="Reactivate User"
